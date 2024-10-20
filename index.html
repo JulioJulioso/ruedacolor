@@ -1,200 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Picker Widget</title>
-    <style>
-        /* CSS de tu widget */
-        body {
-            background-color: rgb(237,234,226);
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            margin: 0;
-        }
 
-        /* Regla de colores */
-        .rule-box {
-            position: absolute;
-            top: 150px;
-            left: 10px;
-            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
-            background-color: rgb(0,20,0);
-            opacity: 85%;
-        }
-
-        .rule-box h4 {
-            color: #BBB;
-            font-size: 14pt;
-            margin: 0;
-            padding: 10px;
-            background-color: #333;
-        }
-
-        #rules {
-            color: #AAAC;
-            margin: 0;
-            padding: 8px;
-            list-style: none;
-        }
-
-        #rules li {
-            cursor: pointer;
-            margin: 10px;
-        }
-
-        #rules li:hover {
-            color: #DDD;
-        }
-
-        #rules li.active, #rules li.active:hover {
-            color: #EEE;
-        }
-
-        .canvas {
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        /* Muestras de colores */
-        .samples {
-            text-align: center;
-        }
-
-        .samples .col {
-            width: 225px;
-            display: inline-block;
-            color: rgb(30,34,36);
-            font-family: serif;
-            font-size: 13px;
-            background-color: rgb(237,234,226);
-            margin-left: -5px;
-            box-sizing: border-box;
-        }
-
-        .samples .col:first-of-type {
-            margin-left: 0;
-        }
-
-        .samples .selected {
-            border: 0px solid #FFF;
-        }
-
-        .samples .input-group {
-            margin: 5px auto;
-        }
-
-        .samples .input-group input[type="text"] {
-            color: white;
-            font-size: 85%;
-            text-align: center;
-            padding: 4px;
-            background-color: rgb(100,100,100);
-            border: none;
-        }
-
-        .samples .hex {
-            width: 98px;
-        }
-
-        .samples .rgb {
-            width: 30px;
-            margin-left: -6px;
-        }
-
-        .samples .rgb:first-of-type {
-            margin-left: 0;
-        }
-
-        .samples .sample {
-            height: 150px;
-            background-color: #ddd;
-        }
-    </style>
-</head>
-<body>
-    <!-- Selector de reglas de colores -->
-    <div class="rule-box">
-        <h4>Color Rule</h4>
-        <ul id="rules">
-            <li data-type="1" class="active">Analogous</li>
-            <li data-type="2">Monochromatic</li>
-            <li data-type="3">Triad</li>
-            <li data-type="4">Complementary</li>
-            <li data-type="5">Custom</li>
-        </ul>
-    </div>
-
-    <!-- Canvas del picker -->
-    <div class="canvas">
-        <canvas id="picker" width="400" height="400"></canvas>
-    </div>
-
-    <!-- Muestras de colores -->
-    <div class="samples">
-        <div class="col selected" data-sample="0">
-            <div class="sample"></div>
-            <div class="input-group">
-                <span>RGB</span>
-                <input type="text" class="rgb r">
-                <input type="text" class="rgb g">
-                <input type="text" class="rgb b">
+        <!-- rule box -->
+        <div class="rule-box">
+            <h4>Color Rule</h4>
+            <ul id="rules">
+                <li data-type="1" class="active">Analogous</li>
+                <li data-type="2">Monochromatic</li>
+                <li data-type="3">Triad</li>
+                <li data-type="4">Complementary</li>
+                <li data-type="5">Custom</li>
+            </ul>
+        </div>
+        <!-- picker canvas -->
+        <div class="canvas">
+            <canvas id="picker"></canvas>
+        </div>
+        <!-- samples -->
+        <div class="samples">
+            <div class="col" data-sample="3">
+                <div class="sample"></div>
+                <div class="input-group">
+                    <span>RGB</span>
+                    <input type="text" maxlength="3" class="rgb r">
+                    <input type="text" maxlength="3" class="rgb g">
+                    <input type="text" maxlength="3" class="rgb b">
+                </div>
+                <div class="input-group">
+                    <span>HEX</span>
+                    <input type="text" class="hex">
+                </div>
             </div>
-            <div class="input-group">
-                <span>HEX</span>
-                <input type="text" class="hex">
+            <div class="col" data-sample="1">
+                <div class="sample"></div>
+                <div class="input-group">
+                    <span>RGB</span>
+                    <input type="text" maxlength="3" class="rgb r">
+                    <input type="text" maxlength="3" class="rgb g">
+                    <input type="text" maxlength="3" class="rgb b">
+                </div>
+                <div class="input-group">
+                    <span>HEX</span>
+                    <input type="text" class="hex">
+                </div>
+            </div>
+            <div class="col selected" data-sample="0">
+                <div class="sample"></div>
+                <div class="input-group">
+                    <span>RGB</span>
+                    <input type="text" maxlength="3" class="rgb r">
+                    <input type="text" maxlength="3" class="rgb g">
+                    <input type="text" maxlength="3" class="rgb b">
+                </div>
+                <div class="input-group">
+                    <span>HEX</span>
+                    <input type="text" class="hex">
+                </div>
+            </div>
+            <div class="col" data-sample="2">
+                <div class="sample"></div>
+                <div class="input-group">
+                    <span>RGB</span>
+                    <input type="text" maxlength="3" class="rgb r">
+                    <input type="text" maxlength="3" class="rgb g">
+                    <input type="text" maxlength="3" class="rgb b">
+                </div>
+                <div class="input-group">
+                    <span>HEX</span>
+                    <input type="text" class="hex">
+                </div>
+            </div>
+            <div class="col" data-sample="4">
+                <div class="sample"></div>
+                <div class="input-group">
+                    <span>RGB</span>
+                    <input type="text" maxlength="3" class="rgb r">
+                    <input type="text" maxlength="3" class="rgb g">
+                    <input type="text" maxlength="3" class="rgb b">
+                </div>
+                <div class="input-group">
+                    <span>HEX</span>
+                    <input type="text" class="hex">
+                </div>
             </div>
         </div>
-        <!-- Agregar más muestras si es necesario -->
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>
-        // Código JS para la rueda de colores
-        $(document).ready(function () {
-            const rules = {
-                1: 'Analogous',
-                2: 'Monochromatic',
-                3: 'Triad',
-                4: 'Complementary',
-                5: 'Custom'
-            };
-
-            $('#rules li').click(function () {
-                $('#rules li').removeClass('active');
-                $(this).addClass('active');
-                const type = $(this).data('type');
-                console.log('Selected Rule:', rules[type]);
-                // Aquí iría la lógica para aplicar la regla de color
-            });
-
-            const canvas = document.getElementById('picker');
-            const ctx = canvas.getContext('2d');
-
-            function drawColorWheel() {
-                // Dibuja la rueda de colores en el canvas
-                const radius = canvas.width / 2;
-                for (let i = 0; i < 360; i++) {
-                    ctx.beginPath();
-                    ctx.arc(radius, radius, radius, (i - 1) * Math.PI / 180, i * Math.PI / 180);
-                    ctx.strokeStyle = `hsl(${i}, 100%, 50%)`;
-                    ctx.stroke();
-                }
-            }
-
-            drawColorWheel();
-
-            // Actualiza las muestras de color al seleccionar en el canvas
-            canvas.addEventListener('click', (event) => {
-                const x = event.offsetX - canvas.width / 2;
-                const y = event.offsetY - canvas.height / 2;
-                const angle = Math.atan2(y, x) * (180 / Math.PI) + 180;
-                const selectedColor = `hsl(${Math.round(angle)}, 100%, 50%)`;
-                $('.samples .selected .sample').css('background-color', selectedColor);
-                $('.samples .selected .rgb.r').val(Math.round(angle)); // Solo como ejemplo, ajustar valores reales de RGB.
-                $('.samples .selected .hex').val('#' + Math.floor(Math.random() * 16777215).toString(16)); // Generar un HEX aleatorio para la muestra.
-            });
-        });
-    </script>
-</body>
-</html>
+        <!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
