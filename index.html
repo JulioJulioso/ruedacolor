@@ -1,86 +1,92 @@
+<!-- rule box -->
+<div class="rule-box">
+    <h4>Color Rule</h4>
+    <ul id="rules">
+        <li data-type="1" class="active">Analogous</li>
+        <li data-type="2">Monochromatic</li>
+        <li data-type="3">Triad</li>
+        <li data-type="4">Complementary</li>
+        <li data-type="5">Custom</li>
+    </ul>
+</div>
+<!-- picker canvas -->
+<div class="canvas">
+    <canvas id="picker"></canvas>
+</div>
+<!-- samples -->
+<div class="samples">
+    <div class="col" data-sample="3">
+        <div class="sample"></div>
+        <div class="input-group">
+            <span>RGB</span>
+            <input type="text" maxlength="3" class="rgb r">
+            <input type="text" maxlength="3" class="rgb g">
+            <input type="text" maxlength="3" class="rgb b">
+        </div>
+        <div class="input-group">
+            <span>HEX</span>
+            <input type="text" class="hex">
+        </div>
+    </div>
+    <div class="col" data-sample="1">
+        <div class="sample"></div>
+        <div class="input-group">
+            <span>RGB</span>
+            <input type="text" maxlength="3" class="rgb r">
+            <input type="text" maxlength="3" class="rgb g">
+            <input type="text" maxlength="3" class="rgb b">
+        </div>
+        <div class="input-group">
+            <span>HEX</span>
+            <input type="text" class="hex">
+        </div>
+    </div>
+    <div class="col selected" data-sample="0">
+        <div class="sample"></div>
+        <div class="input-group">
+            <span>RGB</span>
+            <input type="text" maxlength="3" class="rgb r">
+            <input type="text" maxlength="3" class="rgb g">
+            <input type="text" maxlength="3" class="rgb b">
+        </div>
+        <div class="input-group">
+            <span>HEX</span>
+            <input type="text" class="hex">
+        </div>
+    </div>
+    <div class="col" data-sample="2">
+        <div class="sample"></div>
+        <div class="input-group">
+            <span>RGB</span>
+            <input type="text" maxlength="3" class="rgb r">
+            <input type="text" maxlength="3" class="rgb g">
+            <input type="text" maxlength="3" class="rgb b">
+        </div>
+        <div class="input-group">
+            <span>HEX</span>
+            <input type="text" class="hex">
+        </div>
+    </div>
+    <div class="col" data-sample="4">
+        <div class="sample"></div>
+        <div class="input-group">
+            <span>RGB</span>
+            <input type="text" maxlength="3" class="rgb r">
+            <input type="text" maxlength="3" class="rgb g">
+            <input type="text" maxlength="3" class="rgb b">
+        </div>
+        <div class="input-group">
+            <span>HEX</span>
+            <input type="text" class="hex">
+        </div>
+    </div>
+</div>
 
-        <!-- rule box -->
-        <div class="rule-box">
-            <h4>Color Rule</h4>
-            <ul id="rules">
-                <li data-type="1" class="active">Analogous</li>
-                <li data-type="2">Monochromatic</li>
-                <li data-type="3">Triad</li>
-                <li data-type="4">Complementary</li>
-                <li data-type="5">Custom</li>
-            </ul>
-        </div>
-        <!-- picker canvas -->
-        <div class="canvas">
-            <canvas id="picker"></canvas>
-        </div>
-        <!-- samples -->
-        <div class="samples">
-            <div class="col" data-sample="3">
-                <div class="sample"></div>
-                <div class="input-group">
-                    <span>RGB</span>
-                    <input type="text" maxlength="3" class="rgb r">
-                    <input type="text" maxlength="3" class="rgb g">
-                    <input type="text" maxlength="3" class="rgb b">
-                </div>
-                <div class="input-group">
-                    <span>HEX</span>
-                    <input type="text" class="hex">
-                </div>
-            </div>
-            <div class="col" data-sample="1">
-                <div class="sample"></div>
-                <div class="input-group">
-                    <span>RGB</span>
-                    <input type="text" maxlength="3" class="rgb r">
-                    <input type="text" maxlength="3" class="rgb g">
-                    <input type="text" maxlength="3" class="rgb b">
-                </div>
-                <div class="input-group">
-                    <span>HEX</span>
-                    <input type="text" class="hex">
-                </div>
-            </div>
-            <div class="col selected" data-sample="0">
-                <div class="sample"></div>
-                <div class="input-group">
-                    <span>RGB</span>
-                    <input type="text" maxlength="3" class="rgb r">
-                    <input type="text" maxlength="3" class="rgb g">
-                    <input type="text" maxlength="3" class="rgb b">
-                </div>
-                <div class="input-group">
-                    <span>HEX</span>
-                    <input type="text" class="hex">
-                </div>
-            </div>
-            <div class="col" data-sample="2">
-                <div class="sample"></div>
-                <div class="input-group">
-                    <span>RGB</span>
-                    <input type="text" maxlength="3" class="rgb r">
-                    <input type="text" maxlength="3" class="rgb g">
-                    <input type="text" maxlength="3" class="rgb b">
-                </div>
-                <div class="input-group">
-                    <span>HEX</span>
-                    <input type="text" class="hex">
-                </div>
-            </div>
-            <div class="col" data-sample="4">
-                <div class="sample"></div>
-                <div class="input-group">
-                    <span>RGB</span>
-                    <input type="text" maxlength="3" class="rgb r">
-                    <input type="text" maxlength="3" class="rgb g">
-                    <input type="text" maxlength="3" class="rgb b">
-                </div>
-                <div class="input-group">
-                    <span>HEX</span>
-                    <input type="text" class="hex">
-                </div>
-            </div>
-        </div>
-        <!-- scripts -->
+<!-- Vincula tu archivo CSS -->
+<link rel="stylesheet" href="style.css">
+
+<!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Vincula tu archivo JS -->
+<script src="script.js"></script>
